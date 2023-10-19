@@ -1,1 +1,1 @@
-Example
+Ejemplo de imagen
