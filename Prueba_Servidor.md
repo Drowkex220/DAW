@@ -4,8 +4,8 @@
 
 #Prueba del servidor en cmd con python
 
-![Screenshot1](Captura%de%pantalla%(273).png)
+![Screenshot1](Captura%20de%20pantalla%20(273).png)
 
 #Indice de la carpeta en el navegador
 
-![Screenshot2](Captura%de%pantalla%(272).png)
+![Screenshot2](Captura%20de%20pantalla%20(272).png)
