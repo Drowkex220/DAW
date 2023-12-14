@@ -119,9 +119,9 @@ sudo systemctl restart apache2
 
 ![Screenshot11](Fotos/foto11.png)
 
-# Ya solo quedaria ejecutar la aplicacion accediendo desde el navegador a nuestra dirección ip por ejemplo 'DireccionIP'://test_wsgi. Si se han seguido los pasos correctamente y todas las depencencias estan instaladas se mostrara un mensaje de OK como hemos indicado antes en el archivo
+#### Ya solo quedaria ejecutar la aplicacion accediendo desde el navegador a nuestra dirección ip por ejemplo 'DireccionIP'://test_wsgi. Si se han seguido los pasos correctamente y todas las depencencias estan instaladas se mostrara un mensaje de OK como hemos indicado antes en el archivo
 
-# Instalar awstats
+# 6. Instalar awstats
 
 #### Para instalar el programa usamos
 
@@ -149,7 +149,7 @@ Alias /awstatsclasses "/usr/share/awstats/lib/"
 
 ![Screenshot13](Fotos/foto13.png)
 
-# Instalar PHPMyAdmin
+# 7. Instalar PHPMyAdmin
 
 #### Ejecutamos este comando para instalarlo
 
