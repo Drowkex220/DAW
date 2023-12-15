@@ -1,3 +1,3 @@
-Ejemplo de imagen
-![Screenshot1](dest.roidjpg.jpg)
-![Screenshot2](Captura de pantalla (272).png)
+
+## ENlace Proyecto del primer Trimestre DIW
+https://github.com/Drowkex220/DAW/blob/main/Teama_0/PracticaDIW1_Trimestre.md
