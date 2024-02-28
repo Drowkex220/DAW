@@ -3,9 +3,6 @@
 ## Instalar vsftpd
 
 Para instalar vsftpd primero ejecutamos el siguiente comando de instalación
-```
-sudo apt install vsftpd
-```
 
 ![Screenshot1](img/vsftdp1.png)
 
@@ -16,135 +13,42 @@ sudo systemctl start vsftpd
 sudo systemctl enable vsftpd
 ```
 
-Lo siguiente es crearnos un usuario
+Tambien nos hace falta instalar openssh-server
 
-```
-sudo useradd -m [username]
-sudo passwd [username]
-```
-
-Para configurarlo y poder usar TLS debemos ejecutar este comando
-
-```
-sudo nano /etc/vsftpd.conf
-```
-
-Ahora deberemos descomentar las siguientes lineas 
-
-´´´
-ssl_enable=YES
-rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
-rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
-´´´
-
-generacion del certificado tls
-
-```
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
-
-```
-
-Despues hacemos un restart del servicio
-
-```
-sudo systemctl restart vsftpd
-```
-
-### Habilitar SSH y SFTP
-
-Ejecutamos este comando para instalar el ssh
-
-```
-sudo apt install openssh-server
-```
+![image](https://github.com/Drowkex220/DAW/assets/131724845/ff6f8ffe-f26b-4972-95b1-bae50ff0cf82)
 
 
-### Creacion de los scripts para la automatizacion
 
-Una vez instalado lo iniciamos
+Ahora crearemos un directorio para el sitio web y le damos permisos al directorio
 
-```
-sudo systemctl enable ssh
-sudo systemctl start ssh
+![image](https://github.com/Drowkex220/DAW/assets/131724845/985ff45c-9d5c-4e90-b0c1-6a6e7f0dc550)
 
-```
+Lo siguiente es crear el archivo de configuracion del sitio
 
-Creamos los dos scrpits necesarios
+Haciendo un nano  a esta dirección deberemos crear el siguiente archivo en la carpeta
+![image](https://github.com/Drowkex220/DAW/assets/131724845/b808a2c3-9ef3-454c-8f11-94e5f9acb825)
 
-crear_usuarios.sh
-```
-#!/bin/bash
 
-# Verificar argumentos
-if [ $# -eq 0 ]; then
-    echo "Error: Se requiere al menos un nombre de usuario como argumento."
-    exit 1
-fi
+![image](https://github.com/Drowkex220/DAW/assets/131724845/7547f3b1-3cc5-45bd-9c7c-5b87becc80e0)
 
-# Iterar sobre cada argumento (nombre de usuario)
-for username in "$@"; do
-    # Crear usuario
-    sudo adduser --disabled-password --gecos "" $username
 
-    # Crear directorio de alojamiento web
-    sudo mkdir -p /var/www/html/$username
-    sudo chown $username:$username /var/www/html/$username
-    sudo chmod 755 /var/www/html/$username
+Lo siguiente es activarlo con un enlace simbolico y reiniciar el servidor
 
-    echo "Usuario $username creado con éxito."
-done
-```
+![image](https://github.com/Drowkex220/DAW/assets/131724845/989697f9-de0e-480f-a663-8005da769e27)
 
-configurar_vhosts.sh
-```
-#!/bin/bash
+Con un nano nos aseguramos de que el dominio esté en el archivo de hosts
 
-# Verificar argumentos
-if [ $# -eq 0 ]; then
-    echo "Error: Se requiere al menos un nombre de usuario como argumento."
-    exit 1
-fi
+![image](https://github.com/Drowkex220/DAW/assets/131724845/c3dcb6a3-4a99-4cd1-bf85-64001247ee0c)
 
-# Iterar sobre cada argumento (nombre de usuario)
-for username in "$@"; do
-    # Configurar archivo de host virtual
-    conf_file="/etc/apache2/sites-available/${username}.conf"
-    echo "<VirtualHost *:80>
-        ServerAdmin admin@${username}.example.com
-        ServerName ${username}.example.com
-        DocumentRoot /var/www/html/${username}
-        <Directory /var/www/html/${username}>
-            Options Indexes FollowSymLinks
-            AllowOverride All
-            Require all granted
-        </Directory>
-        ErrorLog ${APACHE_LOG_DIR}/${username}.error.log
-        CustomLog ${APACHE_LOG_DIR}/${username}.access.log combined
-    </VirtualHost>" | sudo tee $conf_file > /dev/null
+Y vemos si funciona
 
-    # Habilitar el host virtual
-    sudo a2ensite $username.conf
+![image](https://github.com/Drowkex220/DAW/assets/131724845/e500efe2-9c7f-4fbc-96dd-c6e4c74fc532)
 
-    echo "Host virtual para $username configurado con éxito."
-done
+Lo que sigue es configurar el vsftpd para el acceso FTP seguro o TLS
 
-# Reiniciar Apache para aplicar los cambios
-sudo systemctl reload apache2
+Hacemos un nano en /etc/vsftpd.conf y dejamos el archivo así
 
-```
 
-También hay que darles permisos cuando los creemos
 
-```
-sudo chmod +x /usr/local/bin/crear_usuarios.sh
-sudo chmod +x /usr/local/bin/configurar_vhosts.sh
-```
 
-Ahora creamos un usuario y haremos el archivo de configuración
 
-```
-sudo /usr/local/bin/crear_usuarios.sh usuario1
-sudo /usr/local/bin/configurar_vhosts.sh usuario1
-```
-
-Eso nos creara un .conf para ese usuario
