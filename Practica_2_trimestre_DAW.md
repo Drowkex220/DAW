@@ -7,7 +7,7 @@ Para instalar vsftpd primero ejecutamos el siguiente comando de instalación
 sudo apt install vsftpd
 ```
 
-![Screenshot1](img/vsftpd1.png)
+![Screenshot1](img/vsftdp1.png)
 
 Ahora iniciaremos el servicio
 
