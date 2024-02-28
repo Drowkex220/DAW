@@ -26,6 +26,7 @@ Ahora crearemos un directorio para el sitio web y le damos permisos al directori
 Lo siguiente es crear el archivo de configuracion del sitio
 
 Haciendo un nano  a esta dirección deberemos crear el siguiente archivo en la carpeta
+
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/b808a2c3-9ef3-454c-8f11-94e5f9acb825)
 
 
@@ -47,6 +48,7 @@ Y vemos si funciona
 Lo que sigue es configurar el vsftpd para el acceso FTP seguro o TLS
 
 Hacemos un nano en /etc/vsftpd.conf y dejamos el archivo así
+
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/a2986905-fae7-4a01-be60-14064d06e657)
 
 lo siguiente es reiniciar el servicio usando
@@ -104,6 +106,7 @@ Permisos y ejecutamos
 
 Ahora solo queda comprobarlo en phpmyadmin
 Iniciamos sesion...
+
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/256fc855-66ea-41e1-b112-b6e78afb3456)
 
 Y comprobamos que la base de datos ha sido creada correctamente
@@ -112,10 +115,12 @@ Y comprobamos que la base de datos ha sido creada correctamente
 
 
 Lo último sería automatizar la habilitación de Python, así que crearemos el archivo Habilitar_python.sh
+
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/c67b3029-023a-4fb9-a8ad-e51fe73411bf)
 
 
 Permisos y ejecutamos
+
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/f1c58443-d8d6-4bc2-ab7f-39e5c9071361)
 
 
