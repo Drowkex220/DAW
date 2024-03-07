@@ -1,12 +1,14 @@
 
-## Enlace Proyecto del primer Trimestre DIW
+## Enlace Proyecto del primer Trimestre DAW
 https://github.com/Drowkex220/DAW/blob/main/Teama_0/PracticaDIW1_Trimestre.md
 
 
-##Enlace Proyecto del segundo Trimestre DIW
+## Enlace Proyecto del segundo Trimestre DAW
 
 https://github.com/Drowkex220/DAW/blob/main/Practica_2_trimestre_DAW.md
 
-## Enlace Proyecto del segundo Trimestre DEWS
+## Enlace a parte de docker del proyecto segundo Trimestre DAW
 
-Gestor de tareas: 
+https://github.com/Drowkex220/DAW/edit/main/Proyecto%20Despliegue%20Docker.md
+
+
