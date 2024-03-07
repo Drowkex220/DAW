@@ -86,5 +86,76 @@ Al crear el contenedor con este volumen ahora si eliminamos el contenedor y crea
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/6763572d-bff2-410c-bc0f-5cb104fcc8e0)
 
 
-Usando bind mount para asociar almacenamiento a los contenedores
+# Usando bind mount para asociar almacenamiento a los contenedores
 
+En este caso vamos a crear un directorio en el sistema de archivo del host, donde vamos a crear un fichero
+![image](https://github.com/Drowkex220/DAW/assets/131724845/0b23a3f6-bad5-4a34-ae4a-8256fd86628d)
+
+Ahora montamos el fichero en un contenedor
+![image](https://github.com/Drowkex220/DAW/assets/131724845/22ad3492-6b4f-4a69-8fcd-de1e3098a263)
+
+Y al hacerle un curl podemos ver como se muestra el contenido del archivo
+![image](https://github.com/Drowkex220/DAW/assets/131724845/7ea7635b-9af5-4970-afbb-73e8d4f00829)
+
+
+Podemos ver que si modificamos el archivo index se modifica el resultado del contenedor aunque esté corriendo
+![image](https://github.com/Drowkex220/DAW/assets/131724845/c4b37edd-8e19-4040-9864-bed9090bdaa7)
+
+# Redes
+
+Vamos a crear un contenedor interactivo con la imagen debian
+![image](https://github.com/Drowkex220/DAW/assets/131724845/d85b5e64-9c57-4be4-851d-ebaf234169b9)
+
+Ahora desde otra ventana del termina vemos la ip asignada al contenedor
+![image](https://github.com/Drowkex220/DAW/assets/131724845/11d01d94-7e5f-4f20-9505-8cbb6ea3e193)
+
+Ahora obtenemos informacion del contenedor filtrando el json de salida para obtener la IPv4 que se le ha asignado
+![image](https://github.com/Drowkex220/DAW/assets/131724845/379eb110-f41f-47a5-98ac-d47d232679be)
+![image](https://github.com/Drowkex220/DAW/assets/131724845/36dcfd0d-5f38-4c0e-9c72-5ffec3f8bd9b)
+
+Si conectamos un contenedor a la red host, el contenedor ofrece el servicio que tiene configurado en el puerto de la red del anfitrión. No tiene ip propia, sino es cómo si tuviera la ip del anfitrión. Por lo que los puertos son accesibles directamente desde el host
+
+![image](https://github.com/Drowkex220/DAW/assets/131724845/79229895-0b7c-4f2e-a4a9-e4315820bdf1)
+![image](https://github.com/Drowkex220/DAW/assets/131724845/17b21849-7939-4f42-84e6-93c24879d40d)
+
+#### Actividad 5
+
+
+Vamos a hacer uso del fichero docker-compose.yml, nos crearemos un archivo yaml con este contenido, este nos creará un contenedor con todo lo definido en el, los docker compose permiten agilizar bastante la creacion de contenedores en docker
+
+![image](https://github.com/Drowkex220/DAW/assets/131724845/246898e1-c7b8-488c-97c7-6f92195cb0c4)
+
+
+Lo siguiente es levantar el contenedor
+![image](https://github.com/Drowkex220/DAW/assets/131724845/9bffa6a7-d85e-4865-835a-a4569ae21799)
+
+Y mostramos los contenedores activos
+![image](https://github.com/Drowkex220/DAW/assets/131724845/b40cd324-3b9b-467a-b448-6a304ff2f519)
+
+comprobamos que se ha creado el volumen
+![image](https://github.com/Drowkex220/DAW/assets/131724845/e5534af2-b619-47ae-80c2-5f9c4a3da6ac)
+
+##### Usando bind mount con docker compose
+
+Creamos un yml con este contenido
+![image](https://github.com/Drowkex220/DAW/assets/131724845/568b42e8-2601-4272-9e00-084a7752eed1)
+
+Iniciamos el contenedor
+![image](https://github.com/Drowkex220/DAW/assets/131724845/f3a2db08-20ba-49d1-8903-fbdce98abac8)
+
+Y podemos ver como se ha creado el directorio data
+![image](https://github.com/Drowkex220/DAW/assets/131724845/c53f5e60-c6d5-4509-82b4-9022de54f04b)
+
+##### Despliegue de aplicacion 
+
+Creamos un yml e introducimos esto en el
+![image](https://github.com/Drowkex220/DAW/assets/131724845/dd3a77ab-c44a-471d-943a-474b540a9477)
+
+Lo siguiente es hacer un docker compose up -d
+![image](https://github.com/Drowkex220/DAW/assets/131724845/cba4f0e1-e299-45a0-9de8-8a3a47952d25)
+
+Si queremos ver los contenedores que se han creado basta con usar este comando
+![image](https://github.com/Drowkex220/DAW/assets/131724845/42bead4f-c609-4e6e-80d6-3facbe08274e)
+
+
+ 
