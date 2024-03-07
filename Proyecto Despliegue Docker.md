@@ -86,7 +86,7 @@ Al crear el contenedor con este volumen ahora si eliminamos el contenedor y crea
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/6763572d-bff2-410c-bc0f-5cb104fcc8e0)
 
 
-# Usando bind mount para asociar almacenamiento a los contenedores
+##### Usando bind mount para asociar almacenamiento a los contenedores
 
 En este caso vamos a crear un directorio en el sistema de archivo del host, donde vamos a crear un fichero
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/0b23a3f6-bad5-4a34-ae4a-8256fd86628d)
@@ -101,7 +101,7 @@ Y al hacerle un curl podemos ver como se muestra el contenido del archivo
 Podemos ver que si modificamos el archivo index se modifica el resultado del contenedor aunque esté corriendo
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/c4b37edd-8e19-4040-9864-bed9090bdaa7)
 
-# Redes
+##### Redes
 
 Vamos a crear un contenedor interactivo con la imagen debian
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/d85b5e64-9c57-4be4-851d-ebaf234169b9)
@@ -156,6 +156,13 @@ Lo siguiente es hacer un docker compose up -d
 
 Si queremos ver los contenedores que se han creado basta con usar este comando
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/42bead4f-c609-4e6e-80d6-3facbe08274e)
+
+Para pararlos podemos usar este
+![image](https://github.com/Drowkex220/DAW/assets/131724845/c1806d04-0fb6-489a-aaca-8c60bd2c52d3)
+
+Y para eliminarlos este
+![image](https://github.com/Drowkex220/DAW/assets/131724845/82e91542-3700-40e6-9a5f-f497ff194aec)
+
 
 
  
