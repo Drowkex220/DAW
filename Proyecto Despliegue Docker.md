@@ -1,6 +1,6 @@
 # PROYECTO DOCKER
 
-#### Actividad 1
+## Actividad 1
 Ejecutamos este comando para eliminar cualquier paquete que pueda entrar en conflicto con la instalación
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/1430efe6-2176-4b0c-9892-f5fa9934e4d9)
 
@@ -14,7 +14,7 @@ Una vez instalado podemos ver las imagenes que tenemos en docker para probarlo
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/d4c71e05-9881-4e90-a71b-9ac8fc1760d3)
 
 
-#### Actividad 2
+## Actividad 2
 
 Vamos a crear una imagen con la guia, lo primero es clonar el repositorio de github
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/6a73f775-8c07-4bcf-8fc1-817caf63b4eb)
@@ -47,7 +47,7 @@ Indicamos el nombre de la imagen y hacemos un push
 
 
 
-#### Actividad 3
+## Actividad 3
 
 Primero descargamos las imagenes necesarias
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/adbe5d13-532e-470c-a558-6d9c7060481c)
@@ -74,7 +74,7 @@ Ahora podemos ver que no se están ejecutando
 Por ultimo los eliminamos
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/c3ed25f2-39fe-449e-aee2-429a66706843)
 
-#### Actividad 4
+## Actividad 4
 
 Creacion de redes para contenedores
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/5232f36d-2f14-4a2b-a7ab-c2673b22f0f6)
@@ -118,7 +118,7 @@ Si conectamos un contenedor a la red host, el contenedor ofrece el servicio que 
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/79229895-0b7c-4f2e-a4a9-e4315820bdf1)
 ![image](https://github.com/Drowkex220/DAW/assets/131724845/17b21849-7939-4f42-84e6-93c24879d40d)
 
-#### Actividad 5
+## Actividad 5
 
 
 Vamos a hacer uso del fichero docker-compose.yml, nos crearemos un archivo yaml con este contenido, este nos creará un contenedor con todo lo definido en el, los docker compose permiten agilizar bastante la creacion de contenedores en docker
